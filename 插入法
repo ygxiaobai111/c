@@ -1,0 +1,26 @@
+#include "stdio.h"
+int fun()
+{
+    int i, j, o, k, a[10];
+    for(i = 0; i < 10; i++)
+    scanf("%d", &a[i]);
+    for(j = 1; j < 10; j++)
+    {
+        k = a[j];
+        o = j - 1;
+        while(o >= 0 && k > a[o])
+        {
+            a[o + 1] = a[o];
+            o--;
+        }
+        a[o + 1] = k;
+    }
+   
+    for(i = 0; i < 10; i++)
+        printf("%d\t", a[i]);
+}
+int main(){
+
+    fun();
+   return 0;
+}
